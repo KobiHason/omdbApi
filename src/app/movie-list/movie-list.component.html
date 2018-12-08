@@ -1,0 +1,46 @@
+
+  <div    class="md-form">
+      
+    <input #input type="text" id="inputMDEx" class="form-control">
+
+          <button  mdbBtn
+                   type="button"
+                   color="info"
+                   outline="true"
+                   movie mdbWavesEffect
+                   (click)="searchMovie(input.value)"  
+                >
+          Search </button>
+    
+  </div>
+
+
+<div>
+
+     <ul class="list-group" *ngFor =" let movie of result.Search"></ul>
+     <br>
+     <div id="flex" class="flex-container justify-content-center " >
+             <div class="item">Image</div>
+             <div class="item">Title</div>
+             <div class="item">Year</div>
+             <div class="item">Runtime</div>
+             <div class="item">Genre</div>
+             <div class="item">Director</div>
+      </div>
+
+
+
+      <div  id="flex" class="flex-container justify-content-center"
+            *ngFor =" let movie of newResults; let i = index">
+
+             <div class="item"> <img src="{{movie.Poster}}" style="width: 50px; height: 64px;"> </div>
+             <div class="item">{{movie.Title }} </div>
+             <div class="item">{{movie.Year }}</div>
+             <div class="item">{{movie.Runtime }}</div>
+             <div class="item">{{movie.Genre }}</div>
+             <div class="item">{{movie.Director}}</div>
+        </div>
+
+
+</div>
+
